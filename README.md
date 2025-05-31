@@ -594,6 +594,21 @@ var monthlyAverageScatterChart = ui.Chart.feature.byFeature({
 });
 print(monthlyAverageScatterChart);
 
+//Expoert to drive average rainfall to the map
+Export.image.toDrive({
+  image: avgRainfall,
+  description: "Rata-rata CH Tahunan WS 2015-2024",
+  scale: 3000,
+  folder: "GEE",
+  region: moi,
+  maxPixels: 1e13,
+  fileFormat: 'GeoTIFF',
+  formatOptions: {
+    cloudOptimized: true
+  }
+});
+
+
 ```
 
 __________________________ 
